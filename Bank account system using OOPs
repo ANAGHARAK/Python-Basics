@@ -1,0 +1,35 @@
+class Bank:
+    def __init__(self):
+        self.bal=10000
+        print("Welcome to the Deposit and Withdrawal Machine")
+
+    def balance(self):
+        print("Your balance is : ", self.bal)
+    def withdraw(self,withdraw):
+        if self.bal>=withdraw:
+            self.bal-=withdraw
+            return self.bal
+        else:
+            return "No Balance"
+
+    def deposit(self,amount):
+        self.bal+=amount
+        return self.bal
+obj=Bank()
+while(1):
+    print("d")
+    print("w")
+    print("b")
+    print("e")
+    op=input("Enter your option:")
+    if(op=='d'):
+        dep=int(input("Enter the amount you want to deposit:"))
+        print(obj.deposit(dep))
+    if(op=='w'):
+        wit = int(input("Enter the amount you want to withdraw:"))
+        print(obj.withdraw(wit))
+    if(op=='b'):
+        obj.balance()
+    if(op=='e'):
+        print("Thank You!")
+        break
